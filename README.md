@@ -92,6 +92,12 @@ $ make
 $ sudo make install
 ```
 
+Build like this on windows:
+$ cd sockpp
+$ mkdir build ; cd build
+$ cmake -G "MinGW Makefiles" ..
+$ mingw32-make
+
 ### Build Options
 
 The library has several build options via CMake to choose between creating a static or shared (dynamic) library - or both. It also allows you to build the example options, and if Doxygen is

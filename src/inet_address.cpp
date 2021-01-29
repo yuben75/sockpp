@@ -103,21 +103,25 @@ void inet_address::create(const std::string& saddr, in_port_t port)
 
 string inet_address::to_string() const
 {
+	#if !defined(_WIN32)
 	char buf[INET_ADDRSTRLEN];
 	auto str = inet_ntop(AF_INET, (void*) &(addr_.sin_addr), buf, INET_ADDRSTRLEN);
 	return std::string(str ? str : "<unknown>")
 		+ ":" + std::to_string(unsigned(port()));
+	#endif
 }
 
 /////////////////////////////////////////////////////////////////////////////
 
 ostream& operator<<(ostream& os, const inet_address& addr)
 {
+	#if !defined(_WIN32)
     char buf[INET_ADDRSTRLEN];
 	auto str = inet_ntop(AF_INET, (void*) &(addr.sockaddr_in_ptr()->sin_addr),
 						 buf, INET_ADDRSTRLEN);
 	os << (str ? str : "<unknown>") << ":" << unsigned(addr.port());
 	return os;
+	#endif
 }
 
 /////////////////////////////////////////////////////////////////////////////

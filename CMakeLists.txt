@@ -50,13 +50,13 @@ set(SOCKPP_STATIC ${SOCKPP}-static)
 
 if(WIN32)
 	option(SOCKPP_BUILD_STATIC "Build static library" ON)
-	option(SOCKPP_BUILD_SHARED "Build shared library (DLL)" OFF)
+	option(SOCKPP_BUILD_SHARED "Build shared library (DLL)" ON)
 else()
 	option(SOCKPP_BUILD_STATIC "Build static library" OFF)
 	option(SOCKPP_BUILD_SHARED "Build shared library" ON)
 endif()
 
-option(SOCKPP_BUILD_EXAMPLES "Build example applications" OFF)
+option(SOCKPP_BUILD_EXAMPLES "Build example applications" ON)
 option(SOCKPP_BUILD_TESTS "Build unit tests" OFF)
 option(SOCKPP_BUILD_DOCUMENTATION "Create Doxygen reference documentation" OFF)
 
