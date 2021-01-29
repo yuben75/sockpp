@@ -33,7 +33,7 @@
 // NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 // --------------------------------------------------------------------------
-
+#include <iostream>
 #include "sockpp/inet6_address.h"
 #include "sockpp/exception.h"
 
@@ -113,6 +113,7 @@ string inet6_address::to_string() const
     return std::string("[") + std::string(str ? str : "<unknown>")
         + "]:" + std::to_string(unsigned(port()));
 	#endif	
+	cout << "inet6_address::to_string()" << endl;
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -126,6 +127,7 @@ ostream& operator<<(ostream& os, const inet6_address& addr)
 	os << "[" << (str ? str : "<unknown>") << "]:" << unsigned(addr.port());
 	return os;
 	#endif
+	cout << "inet6_address::operator<<" << endl;
 }
 
 /////////////////////////////////////////////////////////////////////////////
