@@ -250,3 +250,16 @@ The solution for this case is to use the `socket::clone()` method to make a copy
 The `socket::shutdown()` method can be used to communicate the intent to close the socket from one of these objects to the other without needing another thread signaling mechanism. 
 
 See the [tcpechomt.cpp](https://github.com/fpagliughi/sockpp/blob/master/examples/tcp/tcpechomt.cpp) example.
+
+
+### dikey
+ip -6 addr add 2001:0db8:0:f101::1/64 dev enp0s3
+./tcp6echosvr
+./tcp6echo 2001:db8:0:f101::1
+
+server : nc -6  -l -p 12345
+clenst : nc -6nv fe80::8aa:207d:d6
+
+
+
+

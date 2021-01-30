@@ -56,9 +56,9 @@ else()
 	option(SOCKPP_BUILD_SHARED "Build shared library" ON)
 endif()
 
-option(SOCKPP_BUILD_EXAMPLES "Build example applications" OFF)
+option(SOCKPP_BUILD_EXAMPLES "Build example applications" ON)
 option(SOCKPP_BUILD_TESTS "Build unit tests" OFF)
-option(SOCKPP_BUILD_DOCUMENTATION "Create Doxygen reference documentation" OFF)
+option(SOCKPP_BUILD_DOCUMENTATION "Create Doxygen reference documentation" ON)
 
 # --- C++14 build flags ---
 
